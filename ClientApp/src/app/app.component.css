@@ -1,8 +1,21 @@
-.container {
+
+  .container {
     max-width: 500px;
     margin: auto;
   }
   
+  .username_input {
+    display: block;
+    margin : 0 auto;
+  }
+
+  .username_input_header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #808f05
+  }
+
   .chat_header{
     color: #808f05
   }

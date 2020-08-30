@@ -14,6 +14,8 @@ export class AppComponent {
   uniqueID: string = new Date().getTime().toString();
   messages = new Array<Message>();
   message = new Message();
+  inputValue: string;
+  username : string;
   constructor(
     private chatService: ChatService,
     private _ngZone: NgZone
@@ -27,6 +29,7 @@ export class AppComponent {
       this.message.type = "sent";
       this.message.message = this.txtMessage;
       this.message.date = new Date();
+      this.message.username = this.username;
       this.messages.push(this.message);
       this.chatService.sendMessage(this.message);
       this.txtMessage = '';
@@ -42,5 +45,9 @@ export class AppComponent {
         }
       });
     });
+  }
+
+  saveUsername(){
+    this.username = this.inputValue;
   }
 }
