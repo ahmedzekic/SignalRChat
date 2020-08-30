@@ -1,17 +1,15 @@
 <div class="container">
   <h3 class=" text-center chat_header">Chat Application</h3>
-  <div *ngIf="username===undefined" class="username">
+  <div *ngIf="username===undefined">
     <h6 class="username_input_header">ENTER YOUR USERNAME</h6>
     <input type="text" class="username_input" [(ngModel)]="inputValue">
-    <button class="username_input" type="submit" (click)="saveUsername()">SUBMIT</button>
+    <button class="username_input" type="submit" (click)="saveUsername()">START CHATTING</button>
   </div>
-   <div *ngIf="username!==undefined" class="messaging">
-    <div class="inbox_msg">
+   <div *ngIf="username!==undefined" class="inbox_msg">
       <div class="mesgs">
         <div class="msg_history">
           <div *ngFor="let msg of messages">
           <div class="incoming_msg" *ngIf="msg.type == 'received'">
-            <div class="incoming_msg_img"> </div>
             <div class="received_msg">
               <div class="received_withd_msg">
                 <span class="time_date"> {{msg.username}} </span>
@@ -41,7 +39,5 @@
           </div>
         </div>
       </div>
-    </div>
-
-  </div> 
+   </div> 
 </div>
